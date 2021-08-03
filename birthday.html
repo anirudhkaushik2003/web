@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div id="bg">
+        <img src="img/3595982ff76a4e8ea54d3fd139ae639d.jpeg" width="100%">
+    </div>
+    <script>
+        if ("geolocation" in navigator) {
+            // check if geolocation is supported/enabled on current browser
+            navigator.geolocation.getCurrentPosition(
+                function success(position) {
+                    // for when getting location is a success
+                    console.log('latitude', position.coords.latitude,
+                        'longitude', position.coords.longitude);
+                },
+                function error(error_message) {
+                    // for when getting location results in an error
+                    console.error('An error has occured while retrieving
+                  location', error_message)
+  }  
+});
+} else {
+            // geolocation is not supported
+            // get your location some other way
+            console.log('geolocation is not enabled on this browser')
+        }
+    </script>
+
+</body>
+
+</html>
